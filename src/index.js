@@ -4,12 +4,15 @@ import App from "./App";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import RouteApp from "./routes/Route";
+import ProductProvider from "./context/ProductContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <RouteApp>
-      <App />
-    </RouteApp>
+    <ProductProvider>
+      <RouteApp>
+        <App />
+      </RouteApp>
+    </ProductProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
