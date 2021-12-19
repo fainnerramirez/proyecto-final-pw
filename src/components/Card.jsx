@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Row, Col, Card, Button } from "react-bootstrap";
 import { contextProduct } from "../context/ProductContext";
 import { Toaster } from "react-hot-toast";
+import ModalDetailProduct from "./ModalDetail";
 
 const CardC = () => {
   const { cartProducts, handleIncrementProduct, filterValue } =
@@ -30,13 +31,12 @@ const CardC = () => {
                     product.agregado && product.cantidad > 0 ? "disabled" : null
                   }
                   onClick={() => handleIncrementProduct(product)}
+                  className="m-3"
                 >
                   Agregar
                   <Toaster />
                 </Button>
-                <Button variant="info" className="m-3">
-                  Ver detalles
-                </Button>
+                <ModalDetailProduct product={product} />
               </Card.Footer>
             </Card>
           </Col>
