@@ -1,8 +1,14 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { InputGroup, FormControl, Container } from "react-bootstrap";
+import { contextProduct } from "../context/ProductContext";
 
 const Filter = () => {
-  const [filterValue, setFilterValue] = useState("");
+  const { filterValue, setFilterValue } = useContext(contextProduct);
+
+  const handleInputChange = (e) => {
+    setFilterValue(e.target.value);
+  };
+
   return (
     <Container>
       <div>
@@ -14,7 +20,7 @@ const Filter = () => {
         <FormControl
           aria-label="Large"
           aria-describedby="inputGroup-sizing-sm"
-          onChange={(e) => setFilterValue(e.target.value)}
+          onChange={(e) => handleInputChange(e)}
         />
       </InputGroup>
       <div style={{ padding: "20px" }}>

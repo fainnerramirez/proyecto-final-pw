@@ -4,7 +4,7 @@ export const data = [
   {
     id: uuidv4(),
     nombre: "Carro",
-    precio: "12.000.000",
+    precio: 1200000,
     cantidad: 0,
     agregado: false,
     total: 0.0,
@@ -12,7 +12,7 @@ export const data = [
   {
     id: uuidv4(),
     nombre: "Bicicleta",
-    precio: "2.000.000",
+    precio: 2000000,
     cantidad: 0,
     agregado: false,
     total: 0.0,
@@ -20,7 +20,7 @@ export const data = [
   {
     id: uuidv4(),
     nombre: "Bloques",
-    precio: "10.000",
+    precio: 1000000,
     cantidad: 0,
     agregado: false,
     total: 0.0,
@@ -28,7 +28,7 @@ export const data = [
   {
     id: uuidv4(),
     nombre: "Tv",
-    precio: "3.000.000",
+    precio: 3000,
     cantidad: 0,
     agregado: false,
     total: 0.0,
@@ -36,7 +36,7 @@ export const data = [
   {
     id: uuidv4(),
     nombre: "MacBook",
-    precio: "3.000.000",
+    precio: 3000,
     cantidad: 0,
     agregado: false,
     total: 0.0,

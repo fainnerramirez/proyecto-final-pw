@@ -17,7 +17,7 @@ const MisComprasComponent = () => {
                 <Card.Body>
                   <Card.Title>{product.nombre}</Card.Title>
                   <Card.Text>$ {product.precio}</Card.Text>
-                  <Card.Text>Cantidad: {product.cantidad}</Card.Text>
+                  <Card.Text>Total: {product.total}</Card.Text>
                 </Card.Body>
                 <Card.Footer>
                   <Button
