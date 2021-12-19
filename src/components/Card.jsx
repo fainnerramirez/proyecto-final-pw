@@ -24,7 +24,9 @@ const CardC = () => {
               <Card.Footer>
                 <Button
                   variant="primary"
-                  disabled={product.agregado ? "disabled" : null}
+                  disabled={
+                    product.agregado && product.cantidad > 0 ? "disabled" : null
+                  }
                   onClick={() => handleIncrementProduct(product)}
                 >
                   Agregar
