@@ -13,10 +13,12 @@ const sumaTotalProducto = (state) => {
 export const ProductReducer = (state = [], action) => {
   switch (action.type) {
     case "ADD_PRODUCT":
-      if (!state.find((product) => product.id === action.payload.id)) {
+      if (
+        !state.cartProducts.find((product) => product.id === action.payload.id)
+      ) {
         state.cartProducts.push({
           ...action.payload,
-          cantidad: 1,
+          cantidad: 0,
         });
       }
       let rtn = {

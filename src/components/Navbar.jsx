@@ -4,10 +4,6 @@ import { RUTA } from "../routes/rutasApp";
 import ModalAddProduct from "./ModalAddProduct";
 
 const NavbarComponent = () => {
-  const handleModalAddProduct = () => {
-    return <ModalAddProduct />;
-  };
-
   return (
     <>
       <Navbar bg="dark" variant="dark">
