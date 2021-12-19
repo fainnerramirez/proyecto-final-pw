@@ -7,8 +7,6 @@ const CardC = () => {
   const { cartProducts, handleIncrementProduct, filterValue } =
     useContext(contextProduct);
 
-  console.log("FilterValue", filterValue);
-
   return (
     <Row xs={1} md={2} lg={3} className="g-4">
       {cartProducts

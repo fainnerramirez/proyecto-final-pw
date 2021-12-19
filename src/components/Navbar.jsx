@@ -1,8 +1,13 @@
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { RUTA } from "../routes/rutasApp";
+import ModalAddProduct from "./ModalAddProduct";
 
 const NavbarComponent = () => {
+  const handleModalAddProduct = () => {
+    return <ModalAddProduct />;
+  };
+
   return (
     <>
       <Navbar bg="dark" variant="dark">
@@ -14,7 +19,7 @@ const NavbarComponent = () => {
                 style={{
                   textDecoration: "none",
                   color: "#eeeeee",
-                  padding: "6px",
+                  padding: "15px",
                 }}
               >
                 Inicio
@@ -25,13 +30,15 @@ const NavbarComponent = () => {
                 style={{
                   textDecorationLine: "none",
                   color: "#eeeeee",
-                  padding: "6px",
+                  padding: "15px",
                 }}
               >
                 Mis compras
               </div>
             </Link>
-            <Nav.Link href="#pricing">Créditos</Nav.Link>
+            <Nav.Link>
+              <ModalAddProduct />
+            </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
