@@ -32,7 +32,11 @@ export const ProductReducer = (state = [], action) => {
         ...state,
         cartProducts: state.cartProducts.map((product) => {
           if (product.id === action.payload.id) {
-            return { ...product, cantidad: product.cantidad + 1 };
+            return {
+              ...product,
+              cantidad: product.cantidad + 1,
+              agregado: true,
+            };
           } else {
             return product;
           }
@@ -44,6 +48,23 @@ export const ProductReducer = (state = [], action) => {
         total: sumaTotalProducto(cartProduct.cartProducts),
       };
       return newStateProduct;
+
+    case "DECREMENT":
+      const newCartItemsInDecrease = {
+        ...state,
+        cartProducts: state.cartProducts.map((product) => {
+          if (product.id === action.payload.id) {
+            return { ...product, cantidad: product.cantidad - 1 };
+          } else {
+            return product;
+          }
+        }),
+      };
+      return {
+        ...newCartItemsInDecrease,
+        productCount: sumaCantidadProducto(newCartItemsInDecrease.cartProducts),
+        total: sumaTotalProducto(newCartItemsInDecrease.cartProducts),
+      };
     default:
       return state;
   }

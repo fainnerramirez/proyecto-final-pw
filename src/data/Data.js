@@ -6,6 +6,7 @@ export const data = [
     nombre: "Carro",
     precio: "12.000.000",
     cantidad: 0,
+    agregado: false,
     total: 0.0,
   },
   {
@@ -13,6 +14,7 @@ export const data = [
     nombre: "Bicicleta",
     precio: "2.000.000",
     cantidad: 0,
+    agregado: false,
     total: 0.0,
   },
   {
@@ -20,6 +22,7 @@ export const data = [
     nombre: "Bloques",
     precio: "10.000",
     cantidad: 0,
+    agregado: false,
     total: 0.0,
   },
   {
@@ -27,6 +30,7 @@ export const data = [
     nombre: "Tv",
     precio: "3.000.000",
     cantidad: 0,
+    agregado: false,
     total: 0.0,
   },
   {
@@ -34,6 +38,7 @@ export const data = [
     nombre: "MacBook",
     precio: "3.000.000",
     cantidad: 0,
+    agregado: false,
     total: 0.0,
   },
 ];

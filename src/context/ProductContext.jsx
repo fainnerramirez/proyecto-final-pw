@@ -22,9 +22,18 @@ const ProductProvider = ({ children }) => {
     dispatch({ type: "INCREMENT", payload });
   };
 
+  const handleDecrementProduct = (payload) => {
+    dispatch({ type: "DECREMENT", payload });
+  };
+
   return (
     <contextProduct.Provider
-      value={{ ...products, handleAddProduct, handleIncrementProduct }}
+      value={{
+        ...products,
+        handleAddProduct,
+        handleIncrementProduct,
+        handleDecrementProduct,
+      }}
     >
       {children}
     </contextProduct.Provider>
