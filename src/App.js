@@ -1,18 +1,7 @@
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Container } from "react-bootstrap";
-import Navbar from "./components/Navbar";
-import Filter from "./components/Filter";
-import CardC from "./components/Card";
+import RouteApp from "./routes/Route";
 
 function App() {
-  return (
-    <Container>
-      <Navbar />
-      <Filter />
-      <CardC />
-    </Container>
-  );
+  return <RouteApp />;
 }
 
 export default App;

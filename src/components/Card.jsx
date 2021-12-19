@@ -4,7 +4,7 @@ const CardC = () => {
   return (
     <Row xs={1} md={2} lg={3} className="g-4">
       {Array.from({ length: 6 }).map((_, idx) => (
-        <Col>
+        <Col key={idx}>
           <Card style={{ width: "25rem" }}>
             <Card.Img variant="top" src="https://i.imgur.com/nwDRFEe.jpg" />
             <Card.Body>
