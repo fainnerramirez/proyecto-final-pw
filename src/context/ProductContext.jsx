@@ -20,7 +20,6 @@ const initialState = {
   cartProducts: data,
   productCount: 0,
   total: 0.0,
-  chechout: false,
 };
 
 const ProductProvider = ({ children }) => {
@@ -37,8 +36,6 @@ const ProductProvider = ({ children }) => {
       nombre: nameProduct,
       precio: preciProduct,
     };
-
-    console.log("New Product", newProduct);
 
     dispatch({ type: "ADD_PRODUCT", payload: newProduct });
     notifyCreateProduct();

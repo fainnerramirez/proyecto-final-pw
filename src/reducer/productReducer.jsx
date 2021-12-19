@@ -1,5 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
-
 const sumaCantidadProducto = (state) => {
   return state.reduce((suma, producto) => suma + producto.cantidad, 0);
 };
@@ -7,7 +5,7 @@ const sumaCantidadProducto = (state) => {
 const sumaTotalProducto = (state) => {
   return state
     .reduce((suma, producto) => suma + producto.cantidad * producto.precio, 0)
-    .toFixed(3);
+    .toFixed(2);
 };
 
 export const ProductReducer = (state = [], action) => {

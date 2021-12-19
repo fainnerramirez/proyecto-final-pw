@@ -13,7 +13,11 @@ const MisComprasComponent = () => {
   return (
     <div>
       <div>
-        <h1>Total a pagar: $ {total}</h1>
+        {total > 0 ? (
+          <h1 className="p-5">Total a pagar: $ {total}</h1>
+        ) : (
+          <h3>Los productos que agregues al carrito aparecerán aquí.</h3>
+        )}
       </div>
 
       <Row xs={1} md={2} lg={3} className="g-4">

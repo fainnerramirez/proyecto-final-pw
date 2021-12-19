@@ -19,9 +19,13 @@ const CardC = () => {
                 <Card.Title>{product.nombre}</Card.Title>
                 <Card.Text>$ {product.precio}</Card.Text>
               </Card.Body>
-              <Card.Footer>
+              <Card.Footer style={{ background: "#212529" }}>
                 <Button
-                  variant="primary"
+                  variant={
+                    product.agregado && product.cantidad > 0
+                      ? "secondary"
+                      : "warning"
+                  }
                   disabled={
                     product.agregado && product.cantidad > 0 ? "disabled" : null
                   }
@@ -30,7 +34,7 @@ const CardC = () => {
                   Agregar
                   <Toaster />
                 </Button>
-                <Button variant="primary" className="m-3">
+                <Button variant="info" className="m-3">
                   Ver detalles
                 </Button>
               </Card.Footer>
