@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Row, Col, Card, Button } from "react-bootstrap";
 import { contextProduct } from "../context/ProductContext";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 const CardC = () => {
   const { cartProducts, handleIncrementProduct, filterValue } =
@@ -20,7 +20,6 @@ const CardC = () => {
               <Card.Body>
                 <Card.Title>{product.nombre}</Card.Title>
                 <Card.Text>$ {product.precio}</Card.Text>
-                <Card.Text>Cantidad: {product.cantidad}</Card.Text>
               </Card.Body>
               <Card.Footer>
                 <Button
