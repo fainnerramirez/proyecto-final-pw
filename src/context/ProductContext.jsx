@@ -16,6 +16,11 @@ const notifyCreateProduct = () =>
     position: "top-center",
   });
 
+const notifyPayProduct = () =>
+  toast.success("!Gracias por tu compra!", {
+    position: "top-center",
+  });
+
 const initialState = {
   cartProducts: data,
   productCount: 0,
@@ -50,8 +55,10 @@ const ProductProvider = ({ children }) => {
     dispatch({ type: "DECREMENT", payload });
   };
 
-  const handlePayProducts = () => {
+  const handlePayProducts = (e) => {
+    e.preventDefault();
     dispatch({ type: "CLEAR" });
+    notifyPayProduct();
   };
 
   return (

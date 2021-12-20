@@ -39,7 +39,7 @@ const ModalAddProduct = () => {
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Nombre del producto</Form.Label>
               <Form.Control
-                type="email"
+                type="text"
                 placeholder="AutoMóvil"
                 name="nombre"
                 onChange={handleInputChangeNameProduct}

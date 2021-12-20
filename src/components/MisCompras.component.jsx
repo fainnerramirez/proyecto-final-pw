@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { contextProduct } from "../context/ProductContext";
 import { Row, Card, Button, Col } from "react-bootstrap";
-import { RiMoneyDollarCircleFill } from "react-icons/ri";
+import ModalPayProduct from "./ModalPayProduct";
 
 const MisComprasComponent = () => {
   const {
@@ -25,15 +25,7 @@ const MisComprasComponent = () => {
           )}
         </div>
 
-        <div className="p-5">
-          <Button
-            className="fw-bold fs-5"
-            variant={total > 0 ? "warning" : "secondary"}
-            disabled={total > 0 ? null : "disabled"}
-          >
-            <RiMoneyDollarCircleFill /> Pagar Cuenta
-          </Button>
-        </div>
+        <ModalPayProduct />
       </div>
 
       <Row xs={1} md={2} lg={3} className="g-4">
@@ -57,14 +49,14 @@ const MisComprasComponent = () => {
                       variant="success"
                       onClick={() => handleIncrementProduct(product)}
                     >
-                      +
+                      + 1
                     </Button>
                     <Button
                       variant="danger"
                       className="m-3"
                       onClick={() => handleDecrementProduct(product)}
                     >
-                      -
+                      - 1
                     </Button>
                   </Card.Footer>
                 </Card>
