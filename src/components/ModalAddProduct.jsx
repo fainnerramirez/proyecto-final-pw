@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
+import { MdOutlineAddBusiness } from "react-icons/md";
 import { contextProduct } from "../context/ProductContext";
 
 const ModalAddProduct = () => {
@@ -20,8 +21,8 @@ const ModalAddProduct = () => {
 
   return (
     <>
-      <Button variant="warning" onClick={handleShow}>
-        Crear Producto
+      <Button variant="warning" onClick={handleShow} className="fw-bold">
+        <MdOutlineAddBusiness /> Crear Producto
       </Button>
 
       <Modal show={show} onHide={handleClose} centered>
