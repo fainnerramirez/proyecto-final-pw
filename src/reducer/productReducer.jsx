@@ -68,6 +68,13 @@ export const ProductReducer = (state = [], action) => {
         productCount: sumaCantidadProducto(newCartItemsInDecrease.cartProducts),
         total: sumaTotalProducto(newCartItemsInDecrease.cartProducts),
       };
+
+    case "CLEAR":
+      return {
+        cartProducts: [],
+        productCount: 0,
+        total: 0.0,
+      };
     default:
       return state;
   }

@@ -10,7 +10,12 @@ const NavbarComponent = () => {
         <Container>
           <Navbar.Brand>App</Navbar.Brand>
           <Nav className="me-auto">
-            <Link to={RUTA.HOME}>
+            <Link
+              to={RUTA.HOME}
+              style={{
+                textDecoration: "none",
+              }}
+            >
               <div
                 style={{
                   textDecoration: "none",
@@ -21,7 +26,12 @@ const NavbarComponent = () => {
                 Inicio
               </div>
             </Link>
-            <Link to={RUTA.MIS_COMPRAS}>
+            <Link
+              to={RUTA.MIS_COMPRAS}
+              style={{
+                textDecoration: "none",
+              }}
+            >
               <div
                 style={{
                   textDecorationLine: "none",

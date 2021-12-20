@@ -50,6 +50,10 @@ const ProductProvider = ({ children }) => {
     dispatch({ type: "DECREMENT", payload });
   };
 
+  const handlePayProducts = () => {
+    dispatch({ type: "CLEAR" });
+  };
+
   return (
     <contextProduct.Provider
       value={{
@@ -61,6 +65,7 @@ const ProductProvider = ({ children }) => {
         setFilterValue,
         setNameProduct,
         setPriceProduct,
+        handlePayProducts,
       }}
     >
       {children}
