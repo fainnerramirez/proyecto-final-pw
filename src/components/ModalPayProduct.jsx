@@ -32,15 +32,29 @@ const ModalPayProduct = () => {
           <Modal.Title>Pago de factura</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h3 style={{ padding: "10px 0" }}>Total a pagar: $ {total}</h3>
-          <Button
-            style={{ width: "100%", fontWeight: "bold" }}
-            variant="warning"
-            type="submit"
-            onClick={handlePayProducts}
-          >
-            Pagar
-          </Button>
+          {total > 0 ? (
+            <h3 style={{ padding: "10px 0" }}>Total a pagar: $ {total}</h3>
+          ) : (
+            <h3 style={{ padding: "10px 0" }}>¡Gracias por tu compra!</h3>
+          )}
+
+          {total > 0 ? (
+            <Button
+              style={{ width: "100%", fontWeight: "bold" }}
+              variant="warning"
+              type="submit"
+              onClick={handlePayProducts}
+            >
+              Pagar
+            </Button>
+          ) : (
+            <Button
+              style={{ width: "100%", fontWeight: "bold" }}
+              variant="success"
+            >
+              Éxitos
+            </Button>
+          )}
         </Modal.Body>
       </Modal>
     </>

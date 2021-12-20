@@ -9,7 +9,6 @@ const MisComprasComponent = () => {
     handleIncrementProduct,
     handleDecrementProduct,
     total,
-    handlePayProducts,
   } = useContext(contextProduct);
 
   return (
@@ -28,13 +27,13 @@ const MisComprasComponent = () => {
         <ModalPayProduct />
       </div>
 
-      <Row xs={1} md={2} lg={3} className="g-4">
+      <Row xs={1} md={2} lg={4}>
         {cartProducts.map(
           (product) =>
             product.agregado &&
             product.cantidad > 0 && (
               <Col key={product.id}>
-                <Card style={{ width: "25rem" }}>
+                <Card style={{ width: "18rem" }}>
                   <Card.Img
                     variant="top"
                     src="https://i.imgur.com/nwDRFEe.jpg"

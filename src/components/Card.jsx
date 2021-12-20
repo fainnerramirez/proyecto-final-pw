@@ -9,12 +9,12 @@ const CardC = () => {
     useContext(contextProduct);
 
   return (
-    <Row xs={1} md={2} lg={3} className="g-4">
+    <Row xs={1} md={2} lg={4}>
       {cartProducts
         .filter((product) => product.nombre.includes(filterValue))
         .map((product) => (
           <Col key={product.id}>
-            <Card style={{ width: "25rem" }}>
+            <Card style={{ width: "18rem", margin: "10px" }}>
               <Card.Img variant="top" src="https://i.imgur.com/nwDRFEe.jpg" />
               <Card.Body>
                 <Card.Title>{product.nombre}</Card.Title>

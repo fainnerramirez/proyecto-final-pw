@@ -1,3 +1,5 @@
+import { data } from "../data/Data";
+
 const sumaCantidadProducto = (state) => {
   return state.reduce((suma, producto) => suma + producto.cantidad, 0);
 };
@@ -50,7 +52,7 @@ export const ProductReducer = (state = [], action) => {
       return newStateProduct;
 
     case "DECREMENT":
-      const newCartItemsInDecrease = {
+      const newCartProducts = {
         ...state,
         cartProducts: state.cartProducts.map((product) => {
           if (product.id === action.payload.id) {
@@ -64,14 +66,14 @@ export const ProductReducer = (state = [], action) => {
         }),
       };
       return {
-        ...newCartItemsInDecrease,
-        productCount: sumaCantidadProducto(newCartItemsInDecrease.cartProducts),
-        total: sumaTotalProducto(newCartItemsInDecrease.cartProducts),
+        ...newCartProducts,
+        productCount: sumaCantidadProducto(newCartProducts.cartProducts),
+        total: sumaTotalProducto(newCartProducts.cartProducts),
       };
 
     case "CLEAR":
       return {
-        cartProducts: [],
+        cartProducts: data,
         productCount: 0,
         total: 0.0,
       };
