@@ -2,6 +2,8 @@ import { useContext, useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 import { contextProduct } from "../context/ProductContext";
 import { RiMoneyDollarCircleFill } from "react-icons/ri";
+import { RUTA } from "../routes/rutasApp";
+import { Link } from "react-router-dom";
 
 const ModalPayProduct = () => {
   const { handlePayProducts, total } = useContext(contextProduct);
@@ -49,10 +51,15 @@ const ModalPayProduct = () => {
             </Button>
           ) : (
             <Button
-              style={{ width: "100%", fontWeight: "bold" }}
+              style={{ width: "100%", fontWeight: "bold", color: "#ffffff" }}
               variant="success"
             >
-              Éxitos
+              <Link
+                to={RUTA.HOME}
+                style={{ color: "#ffffff", textDecoration: "none" }}
+              >
+                Seguir Comprando
+              </Link>
             </Button>
           )}
         </Modal.Body>

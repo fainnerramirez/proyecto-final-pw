@@ -12,7 +12,7 @@ const Filter = () => {
   return (
     <Container>
       <div>
-        <h1 style={{ textAlign: "center" }}>Filtro</h1>
+        <h1 style={{ textAlign: "center" }}>Carrito de compras</h1>
       </div>
       <br />
       <InputGroup size="lg">
