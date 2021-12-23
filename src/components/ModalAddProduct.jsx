@@ -37,7 +37,7 @@ const ModalAddProduct = () => {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3">
               <Form.Label>Nombre del producto</Form.Label>
               <Form.Control
                 type="text"
@@ -50,11 +50,11 @@ const ModalAddProduct = () => {
               </Form.Text>
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-3">
               <Form.Label>Precio del producto</Form.Label>
               <Form.Control
                 type="number"
-                placeholder="0.000"
+                placeholder="$0.00"
                 name="precio"
                 onChange={handleInputChangePriceProduct}
               />

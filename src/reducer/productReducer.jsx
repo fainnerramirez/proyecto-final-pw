@@ -33,15 +33,9 @@ export const ProductReducer = (state = [], action) => {
       const cartProduct = {
         ...state,
         cartProducts: state.cartProducts.map((product) => {
-          if (product.id === action.payload.id) {
-            return {
-              ...product,
-              cantidad: product.cantidad + 1,
-              agregado: true,
-            };
-          } else {
-            return product;
-          }
+          return product.id === action.payload.id
+            ? { ...product, cantidad: product.cantidad + 1, agregado: true }
+            : product;
         }),
       };
       const newStateProduct = {

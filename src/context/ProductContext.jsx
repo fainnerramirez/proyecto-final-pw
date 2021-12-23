@@ -1,25 +1,10 @@
 import { createContext, useReducer, useState } from "react";
 import { data } from "../data/Data";
 import { ProductReducer } from "../reducer/productReducer";
-import toast from "react-hot-toast";
 import { v4 as uuidv4 } from "uuid";
+import { toastView } from "../utils/Toast.config";
 
 export const contextProduct = createContext();
-
-const notifyAddProduct = () =>
-  toast.success("Producto agregado correctamente.", {
-    position: "top-center",
-  });
-
-const notifyCreateProduct = () =>
-  toast.success("El producto ha sido creado", {
-    position: "top-center",
-  });
-
-const notifyPayProduct = () =>
-  toast.success("!Gracias por tu compra!", {
-    position: "top-center",
-  });
 
 const initialState = {
   cartProducts: data,
@@ -36,19 +21,33 @@ const ProductProvider = ({ children }) => {
 
   const handleAddProduct = (e) => {
     e.preventDefault();
-    const newProduct = {
-      id: uuidv4(),
-      nombre: nameProduct,
-      precio: preciProduct,
-    };
 
-    dispatch({ type: "ADD_PRODUCT", payload: newProduct });
-    notifyCreateProduct();
+    if (nameProduct !== "" && preciProduct !== "") {
+      if (
+        !products.cartProducts.find(
+          (product) =>
+            product.nombre.toUpperCase() === nameProduct.toUpperCase()
+        )
+      ) {
+        const newProduct = {
+          id: uuidv4(),
+          nombre: nameProduct,
+          precio: preciProduct,
+        };
+
+        dispatch({ type: "ADD_PRODUCT", payload: newProduct });
+        toastView("El producto ha sido creado", "success");
+      } else {
+        toastView("Ya existe un producto con este nombre", "error");
+      }
+    } else {
+      toastView("LLene todos los campos del formulario", "error");
+    }
   };
 
   const handleIncrementProduct = (payload) => {
     dispatch({ type: "INCREMENT", payload });
-    notifyAddProduct();
+    toastView("Producto agregado correctamente", "success");
   };
 
   const handleDecrementProduct = (payload) => {
@@ -58,7 +57,6 @@ const ProductProvider = ({ children }) => {
   const handlePayProducts = (e) => {
     e.preventDefault();
     dispatch({ type: "CLEAR" });
-    notifyPayProduct();
   };
 
   return (
